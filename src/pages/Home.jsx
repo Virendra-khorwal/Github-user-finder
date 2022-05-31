@@ -1,7 +1,9 @@
-
+import UserResults from "../components/users/userResults";
 const Home = () => {
 
-    return <>Home</>
+    return <>
+        <UserResults />
+    </>
 
 }
 
