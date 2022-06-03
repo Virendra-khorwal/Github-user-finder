@@ -1,14 +1,10 @@
-import { useEffect, useContext } from "react";
+import {  useContext } from "react";
 import Spinner from "../layout/Spinner";
 import UserItem from "./userItem";
 import GithubContext from "../../context/Github Context/githubContext";
 
 const UserResults = () => {
-  const {users, loading, fetchUsers} = useContext(GithubContext);
-  
-  useEffect(() => {
-    fetchUsers();
-  }, []);
+  const { users, loading } = useContext(GithubContext);
 
   if (!loading) {
     return (
@@ -18,8 +14,8 @@ const UserResults = () => {
         ))}
       </div>
     );
-  }else {
-      return <Spinner/>
+  } else {
+    return <Spinner />;
   }
 };
 
